@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeede8">
+  <meta name="description" content="An interactive architectural assembly study, made from the original Rhino model.">
+  <title>Assembly — An architectural study</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23626e5d' d='M16 3 30 11 16 19 2 11z'/%3E%3Cpath fill='none' stroke='%232c332c' stroke-width='2' d='m2 17 14 8 14-8M2 23l14 8 14-8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <main id="viewer" aria-label="Interactive architectural model">
+    <div id="canvas-wrap"></div>
+    <header class="masthead">
+      <a href="./" class="identity" aria-label="Assembly home"><svg viewBox="0 0 32 36" aria-hidden="true"><path d="M2 10 16 2l14 8-14 8zM2 18l14 8 14-8M2 26l14 8 14-8"/></svg><span>ASSEMBLY<span class="identity-sub">ARCHITECTURAL STUDIES</span></span></a>
+      <div class="edition">RHINO → WEB<span>STUDY 001</span></div>
+    </header>
+    <section class="title-block" aria-labelledby="page-title"><div class="eyebrow"><span class="dot"></span> AN INTERACTIVE AXONOMETRIC</div><h1 id="page-title">Office<br><em>assembly.</em></h1><p id="model-summary">An architectural assembly study.</p></section>
+    <aside class="assembly-key" aria-label="Architectural assemblies"><span class="eyebrow">THE ASSEMBLIES</span><ol id="assembly-list"></ol></aside>
+    <div id="model-labels" aria-hidden="true"></div>
+    <div class="view-tools" aria-label="View controls"><button id="reset" title="Reset axonometric view" aria-label="Reset axonometric view"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>Reset view</span></button></div>
+    <section class="dock" aria-label="Assembly controls">
+      <div class="mode-switch"><button id="assemble" class="active" aria-pressed="true">Assembled</button><button id="explode" aria-pressed="false">Exploded <span aria-hidden="true">↗</span></button></div>
+      <div class="separator"></div><label class="slider-label" for="separation">Separation</label><input id="separation" aria-label="Assembly separation" type="range" min="0" max="100" step="1" value="0"><output for="separation" id="percentage">0<span>%</span></output>
+    </section>
+    <footer class="footer"><span><b id="view-state">01</b> / <span id="state-name">ASSEMBLED</span></span><span class="instructions">DRAG TO ORBIT <i>·</i> SCROLL TO ZOOM</span><span class="projection">ORTHOGRAPHIC PROJECTION</span></footer>
+    <div id="loading" role="status"><div class="loading-mark">A<span>↗</span></div><p id="loading-text">Preparing the architectural model</p><div class="loading-track"><span></span></div></div>
+    <div id="notice" role="status" class="sr-only"></div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
